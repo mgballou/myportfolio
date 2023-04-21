@@ -1,0 +1,19 @@
+
+
+
+* {
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: sticky;
+    top: 0px;
+}
