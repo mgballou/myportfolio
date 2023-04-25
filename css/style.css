@@ -9,12 +9,12 @@
 
 section {
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
-nav {
+/* nav {
     position: sticky;
     top: 0px;
-}
+} */
