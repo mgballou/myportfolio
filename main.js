@@ -1,17 +1,13 @@
 console.log('JS linked')
-// state
-let userName = ""
-let phoneNumber = ""
-let emailAddress = ""
-let subject = ""
-let message = ""
+
+const formSpreeUrl = 'https://formspree.io/f/mqkowoka'
 
 // cached DOM elements
 const navbarEl = document.querySelector('nav')
+const navbarBurgerEl = document.querySelector('.navbar-burger')
 const navbarMenuEl = document.getElementById('navbar-target')
-const formSubmitButton = document.getElementById('form-submit')
-
-const inputEls = document.querySelectorAll('input, textarea')
+const formEl = document.querySelector('form')
+const contactTitleEl = document.getElementById('form-title')
 
 // event listeners
 
@@ -21,28 +17,11 @@ navbarEl.addEventListener('mouseover', displayNav)
 
 navbarEl.addEventListener('mouseout', resetOpacity)
 
-formSubmitButton.addEventListener('click', handleForm)
+formEl.addEventListener('submit', handleForm)
 
-inputEls.forEach(input => {
-    input.addEventListener('input', function(evt){
-        switch (evt.target.name){
-            case 'userName':
-               userName = evt.target.value
-               break
-            case 'phoneNumber':
-                phoneNumber = evt.target.value
-                break
-            case 'emailAddress':
-                emailAddress = evt.target.value
-                break
-            case 'subject':
-                subject = evt.target.value
-                break
-            case 'message':
-                message = evt.target.value
-        }
-    })
-})
+navbarBurgerEl.addEventListener('click', handleNavBurger)
+
+
 
 // functions
 
@@ -58,16 +37,51 @@ function displayNav(evt) {
     }
 }
 
-function resetOpacity(evt){
-    if (window.scrollY > 35){
+function resetOpacity(evt) {
+    if (window.scrollY > 35) {
         navbarEl.style.opacity = "0.0"
     }
 }
 
-function handleForm(evt){
-    console.log(userName, phoneNumber, emailAddress, subject, message)
-    
+function handleForm(evt) {
+    evt.preventDefault()
+    submitForm()
 }
+
+function submitForm() {
+    fetch(formSpreeUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: formEl.name.value,
+            email: formEl.email.value,
+            phone: formEl.phone.value,
+            subject: formEl.subject.value,
+            message: formEl.message.value
+            // add more fields as needed
+        })
+    }).then(function (response) {
+        clearForm()
+
+    })
+}
+function clearForm(){
+    formEl.name.value = ""
+    formEl.email.value = ""
+    formEl.phone.value = ""
+    formEl.subject.value = ""
+    formEl.message.value = ""
+    contactTitleEl.innerText = "Thanks for reaching out!"
+
+}
+
+function handleNavBurger(evt){
+    navbarMenuEl.classList.toggle('is-active')
+    navbarBurgerEl.classList.toggle('is-active')
+}
+
 // window events
 
 window.onscroll = function (evt) {
