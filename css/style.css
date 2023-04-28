@@ -5,6 +5,7 @@
     box-sizing: border-box;
     /* border: 1px solid red; */
     transition: opacity 0.5s ease-in-out;
+    
 }
 
 section {
@@ -18,3 +19,14 @@ section {
     position: sticky;
     top: 0px;
 } */
+
+.hover-scale {
+    scale: 0.9;
+    transition: scale 0.5s ease-in-out;
+
+}
+
+.hover-scale:hover {
+    scale: 1.1;
+
+}

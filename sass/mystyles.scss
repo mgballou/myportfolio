@@ -1,2 +1,52 @@
+//consistent background acrcoss the entire body
+//i want boxes to stay white/my neutral color
+//i want cards to be a lighter version of my background color
+// in page buttons should be one color, in nav buttons a diffferent color
+
 @charset "utf-8";
+
+
+// Import a Google Font
+//primary and secondary - find match, one title one text? one stylistic one normal?
+
+
+// Set your brand colors
+$specialpurple: #310131;
+$juicylilac: #847996;
+$cottonblue: #88b7b5;
+$lightsage: #a7cab1;
+$creamywhite: #f4ecd6;
+
+$oxfordblue: #0a1128;
+$pennblue: #001f54;
+$indigodye: #034078;
+$cerulean: #1282A2;
+$offwhite: #fefcfb;
+
+
+
+// Update Bulma's global variables
+//current using primary for nav buttons, primary light and info light for section backgrounds, grey for card backgrounds, dark for navbar, link for submit and checkout on github/linkedin
+
+$dark: $specialpurple;
+$white: $creamywhite;
+$primary: $juicylilac;
+$info: $cottonblue;
+$link: $lightsage;
+
+
+// $white: $offwhite;
+// $primary: $cerulean;
+// $info: $indigodye;
+// $link: $pennblue;
+
+
+// Update some of Bulma's component variables
+
+$body-background-color: $lightsage;
+// $body-background-color: $oxfordblue;
+// $navbar-background-color: $pennblue;
+
+
 @import "../bulma/bulma.sass";
+
