@@ -8,6 +8,23 @@
 
 // Import a Google Font
 //primary and secondary - find match, one title one text? one stylistic one normal?
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+//////// font-family: 'Rajdhani', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+////////// font-family: 'Lobster Two', cursive;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,300;1,200;1,300&display=swap');
+
+
+////////// font-family: 'Barlow Condensed', sans-serif;
+/// 
+/// 
+
+@import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
 
 
 // Set your brand colors
@@ -35,10 +52,11 @@ $info: $cottonblue;
 $link: $lightsage;
 
 
-// $white: $offwhite;
-// $primary: $cerulean;
-// $info: $indigodye;
-// $link: $pennblue;
+$family-secondary: 'Walter Turncoat', cursive;
+
+$family-primary: 'Rajdhani', sans-serif;
+
+$family-fancy: 'Barlow Condensed', sans-serif;
 
 
 // Update some of Bulma's component variables
@@ -46,6 +64,11 @@ $link: $lightsage;
 $body-background-color: $lightsage;
 // $body-background-color: $oxfordblue;
 // $navbar-background-color: $pennblue;
+
+.is-family-fancy {
+    font-family: $family-fancy;
+}
+
 
 
 @import "../bulma/bulma.sass";
